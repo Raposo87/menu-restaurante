@@ -1,0 +1,9 @@
+{
+    "name": "Le Bistrot Menu",
+    "short_name": "Menu",
+    "start_url": "index.html",
+    "display": "standalone",         
+    "orientation": "landscape",
+    "background_color": "#ffffff",
+    "theme_color": "#198754"
+  }
