@@ -143,6 +143,7 @@ h1 {
     z-index: 1000;
     text-align: center;
     padding: 20px;
+    margin-left: -6%;
 }
 
 .rotate-icon {

@@ -151,28 +151,38 @@ document.querySelectorAll(".item-button").forEach(button => {
 });
 
 // Função para verificar a orientação do dispositivo
+const orientationMessages = {
+    pt: "Por favor, gire seu dispositivo para o modo paisagem.",
+    en: "Please rotate your device to landscape mode."
+};
+
+function updateOrientationMessage() {
+    const orientationMessage = document.querySelector('.orientation-message p');
+    currentLang = currentLang === "pt" ? "en" : "pt";
+    orientationMessage.textContent = orientationMessages[currentLang];
+}
+
 function checkOrientation() {
-    if (window.orientation !== undefined) {
-        // For mobile devices
-        if (Math.abs(window.orientation) === 90) {
-            // Landscape mode
-            document.body.style.display = "block";
-            document.querySelector(".orientation-message").style.display = "none";
-        } else {
-            // Portrait mode
-            document.body.style.display = "none";
-            document.querySelector(".orientation-message").style.display = "flex";
-        }
+    const isLandscape = window.innerWidth > window.innerHeight;
+    const orientationMessage = document.querySelector('.orientation-message');
+    
+    if (!isLandscape) {
+        orientationMessage.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        
+        // Start alternating messages
+        updateOrientationMessage();
+        this.orientationMessageInterval = setInterval(updateOrientationMessage, 4000);
     } else {
-        // For desktop browsers
-        if (window.innerWidth < window.innerHeight) {
-            // Portrait mode
-            document.body.style.display = "none";
-            document.querySelector(".orientation-message").style.display = "flex";
-        } else {
-            // Landscape mode
-            document.body.style.display = "block";
-            document.querySelector(".orientation-message").style.display = "none";
-        }
+        orientationMessage.style.display = 'none';
+        document.body.style.overflow = 'auto';
+        
+        // Stop alternating messages
+        clearInterval(this.orientationMessageInterval);
     }
 }
+
+// Check orientation on load and resize
+window.addEventListener('load', checkOrientation);
+window.addEventListener('resize', checkOrientation);
+window.addEventListener('orientationchange', checkOrientation);
