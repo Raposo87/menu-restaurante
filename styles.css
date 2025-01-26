@@ -1,0 +1,170 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    margin: 0;
+}
+
+#language-toggle {
+    padding: 5px 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#language-toggle:hover {
+    background-color: #0056b3;
+}
+
+.menu-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.menu-button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.menu-button.active {
+    background-color: #0056b3;
+}
+
+.menu-container {
+    display: flex;
+    gap: 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.menu-category {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 50%;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+}
+
+.item-button {
+    padding: 10px 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.item-button:hover {
+    background-color: #e0e0e0;
+}
+
+.image-display {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.image-display img {
+    max-width: 100%;
+    max-height: 300px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+/* Estilo para a imagem */
+#displayed-image {
+    max-width: 100%;
+    max-height: 300px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Estilo para a descrição */
+#item-description {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+    font-style: italic;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Estilo para a mensagem de orientação */
+.orientation-message {
+    display: none; /* Inicialmente oculto */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    font-size: 24px;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Estilo para o ícone de telefone */
+.rotate-icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+    animation: rotate 2s infinite ease-in-out; /* Animação de rotação */
+}
+
+/* Animação de rotação */
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(90deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+/* Exibe a mensagem no modo retrato */
+@media screen and (orientation: portrait) {
+    body {
+        display: none; /* Oculta o conteúdo principal */
+    }
+
+    .orientation-message {
+        display: flex; /* Exibe a mensagem */
+    }
+}

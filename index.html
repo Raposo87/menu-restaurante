@@ -1,303 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
-    <meta name="screen-orientation" content="landscape">
-    <title>Menu</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="manifest" href="manifest.json">
+    <title>Menu de Restaurante</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header>
+        <h1 data-i18n="restaurantTitle">Restaurante</h1>
+        <button id="language-toggle" data-i18n="languageButton">English</button>
+    </header>
 
-<!-- Mensagem de rotação para modo retrato -->
-<div class="portrait-message">
-    <div>
-        <h2>Por favor, gire seu dispositivo</h2>
-        <div class="rotate-icon">📱</div>
-        <p>Este menu foi projetado para ser visualizado em modo paisagem</p>
+    <div class="orientation-message">
+        <i class="fas fa-mobile-alt rotate-icon"></i>
+        <p>Por favor, gire seu dispositivo para o modo paisagem.</p>
     </div>
-</div>
 
-<div class="container py-5">
-    <h1 class="main-title">Cardápio Le Bistrot</h1>
-    <section class="language">
-        <div class="container">
-            <div class="caixa-language">
-                <div class="language-selected">
-                    PT
-                </div>
-                <UL>
-                    <LI><a href="#" class="br">Português</a></LI>
-                    <LI><a href="#" class="en">Inglês</a></LI>
-                </UL>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Navegação em Tabs -->
-    <ul class="nav nav-tabs" id="menuTabs" role="tablist">
-        <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="pratos-tab" data-bs-toggle="tab" data-bs-target="#pratos" type="button" role="tab">
-                Pratos Principais
-            </button>
-        </li>
-        <li class="nav-item" role="presentation">
-            <button class="nav-link" id="bebidas-tab" data-bs-toggle="tab" data-bs-target="#bebidas" type="button" role="tab">
-                Drinks
-            </button>
-        </li>
-        <li class="nav-item" role="presentation">
-            <button class="nav-link" id="sobremesas-tab" data-bs-toggle="tab" data-bs-target="#sobremesas" type="button" role="tab">
-                Sobremesas
-            </button>
-        </li>
-    </ul>
+    <div class="menu-buttons">
+        <button class="menu-button active" data-category="main">Pratos Principais</button>
+        <button class="menu-button" data-category="drinks">Bebidas</button>
+        <button class="menu-button" data-category="desserts">Sobremesas</button>
+    </div>
 
-    <!-- Conteúdo das Tabs -->
-    <div class="tab-content" id="menuTabsContent">
+    <div class="menu-container">
         <!-- Pratos Principais -->
-        <div class="tab-pane fade show active" id="pratos" role="tabpanel">
-            <div class="menu-items">
-                <section class="mb-5">
-                    
-                    <div class="menu-items">
-                        <div class="menu-item">
-                            <div class="row justify-content-between align-items-center">
-                                <div class="col">
-                                    <h3>Salmão Grelhado ao Molho de Ervas</h3>
-                                    <p class="description">Filé de salmão fresco grelhado com molho de ervas finas e legumes da estação</p>
-                                </div>
-                                <div class="col-auto">
-                                    <span class="price">R$ 89,90</span>
-                                </div>
-                            </div>
-                        </div>
-        
-                        <div class="menu-item">
-                            <div class="row justify-content-between align-items-center">
-                                <div class="col">
-                                    <h3>Fettuccine ao Molho Alfredo</h3>
-                                    <p class="description">Massa fresca com molho cremoso de queijo e cogumelos</p>
-                                </div>
-                                <div class="col-auto">
-                                    <span class="price">R$ 65,90</span>
-                                </div>
-                            </div>
-                        </div>
-        
-                        <div class="menu-item">
-                            <div class="row justify-content-between align-items-center">
-                                <div class="col">
-                                    <h3>Picanha na Brasa</h3>
-                                    <p class="description">Picanha premium grelhada com arroz, farofa e vinagrete</p>
-                                </div>
-                                <div class="col-auto">
-                                    <span class="price">R$ 98,90</span>
-                                </div>
-                            </div>
-                        </div>
-        
-                        <div class="menu-item">
-                            <div class="row justify-content-between align-items-center">
-                                <div class="col">
-                                    <h3>Risoto de Camarão</h3>
-                                    <p class="description">Arroz arbóreo com camarões grandes e açafrão</p>
-                                </div>
-                                <div class="col-auto">
-                                    <span class="price">R$ 87,90</span>
-                                </div>
-                            </div>
-                        </div>
-        
-                        <div class="menu-item">
-                            <div class="row justify-content-between align-items-center">
-                                <div class="col">
-                                    <h3>Moqueca de Peixe</h3>
-                                    <p class="description">Peixe fresco com leite de coco, dendê e pimentões</p>
-                                </div>
-                                <div class="col-auto">
-                                    <span class="price">R$ 82,90</span>
-                                </div>
-                            </div>
-                        </div>
-        
-                        <div class="menu-item">
-                            <div class="row justify-content-between align-items-center">
-                                <div class="col">
-                                    <h3>Filé Mignon ao Molho Madeira</h3>
-                                    <p class="description">Filé mignon grelhado com molho madeira e batatas assadas</p>
-                                </div>
-                                <div class="col-auto">
-                                    <span class="price">R$ 92,90</span>
-                                </div>
-                            </div>
-                        </div>
-        
-                        <div class="menu-item">
-                            <div class="row justify-content-between align-items-center">
-                                <div class="col">
-                                    <h3>Frango Thai</h3>
-                                    <p class="description">Peito de frango ao curry vermelho com leite de coco e arroz jasmim</p>
-                                </div>
-                                <div class="col-auto">
-                                    <span class="price">R$ 68,90</span>
-                                </div>
-                            </div>
-                        </div>
-        
-                        <div class="menu-item">
-                            <div class="row justify-content-between align-items-center">
-                                <div class="col">
-                                    <h3>Nhoque ao Pomodoro</h3>
-                                    <p class="description">Nhoque de batata caseiro ao molho de tomates frescos e manjericão</p>
-                                </div>
-                                <div class="col-auto">
-                                    <span class="price">R$ 59,90</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+        <div class="menu-category" id="main">
+            <div class="menu-item" data-image="https://images.pexels.com/photos/842142/pexels-photo-842142.jpeg?auto=compress&cs=tinysrgb&w=400" data-description="main1Description">
+                <button class="item-button">
+                    <span data-i18n="main1">Peixe Grelhado</span> - <span data-i18n="main1Price">€ 25,00</span>
+                </button>
+            </div>
+            <div class="menu-item" data-image="https://images.pexels.com/photos/29208507/pexels-photo-29208507/free-photo-of-polvo-gourmet-com-polenta-e-batatas.jpeg?auto=compress&cs=tinysrgb&w=400" data-description="main2Description">
+                <button class="item-button">
+                    <span data-i18n="main2">Polvo Grelhado</span> - <span data-i18n="main2Price">€ 35,00</span>
+                </button>
+            </div>
+            <div class="menu-item" data-image="https://images.pexels.com/photos/30325091/pexels-photo-30325091.jpeg?auto=compress&cs=tinysrgb&w=400" data-description="main3Description">
+                <button class="item-button">
+                    <span data-i18n="main3">Bife à Parmegiana</span> - <span data-i18n="main3Price">€ 40,00</span>
+                </button>
+            </div>
+            <div class="menu-item" data-image="https://images.pexels.com/photos/30343602/pexels-photo-30343602.jpeg?auto=compress&cs=tinysrgb&w=400" data-description="main4Description">
+                <button class="item-button">
+                    <span data-i18n="main4">Lasanha</span> - <span data-i18n="main4Price">€ 38,00</span>
+                </button>
+            </div>
+            <div class="menu-item" data-image="https://images.pexels.com/photos/1234535/pexels-photo-1234535.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load" data-description="main5Description">
+                <button class="item-button">
+                    <span data-i18n="main5">Risoto de Cogumelos</span> - <span data-i18n="main5Price">€ 42,00</span>
+                </button>
             </div>
         </div>
 
         <!-- Bebidas -->
-        <div class="tab-pane fade" id="bebidas" role="tabpanel">
-            <div class="menu-items">
-                <section class="mb-5">
-                    
-                    <div class="menu-items">
-                        <div class="menu-item">
-                            <div class="row justify-content-between align-items-center">
-                                <div class="col">
-                                    <h3>Vinho Tinto Casa</h3>
-                                    <p class="description">Garrafa 750ml</p>
-                                </div>
-                                <div class="col-auto">
-                                    <span class="price">R$ 98,00</span>
-                                </div>
-                            </div>
-                        </div>
-        
-                        <div class="menu-item">
-                            <div class="row justify-content-between align-items-center">
-                                <div class="col">
-                                    <h3>Caipirinha</h3>
-                                    <p class="description">Limão, vodka ou cachaça</p>
-                                </div>
-                                <div class="col-auto">
-                                    <span class="price">R$ 28,90</span>
-                                </div>
-                            </div>
-                        </div>
-        
-                        <div class="menu-item">
-                            <div class="row justify-content-between align-items-center">
-                                <div class="col">
-                                    <h3>Suco Natural</h3>
-                                    <p class="description">Laranja, limão, maracujá ou abacaxi</p>
-                                </div>
-                                <div class="col-auto">
-                                    <span class="price">R$ 14,90</span>
-                                </div>
-                            </div>
-                        </div>
-        
-                        <div class="menu-item">
-                            <div class="row justify-content-between align-items-center">
-                                <div class="col">
-                                    <h3>Água Mineral</h3>
-                                    <p class="description">Com ou sem gás</p>
-                                </div>
-                                <div class="col-auto">
-                                    <span class="price">R$ 7,90</span>
-                                </div>
-                            </div>
-                        </div>
-        
-                        <div class="menu-item">
-                            <div class="row justify-content-between align-items-center">
-                                <div class="col">
-                                    <h3>Cerveja Artesanal</h3>
-                                    <p class="description">IPA, Pilsen ou Weiss</p>
-                                </div>
-                                <div class="col-auto">
-                                    <span class="price">R$ 24,90</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+        <div class="menu-category" id="drinks" style="display: none;">
+            <div class="menu-item" data-image="https://images.pexels.com/photos/10048183/pexels-photo-10048183.jpeg?auto=compress&cs=tinysrgb&w=400" data-description="drink1Description">
+                <button class="item-button">
+                    <span data-i18n="drink1">Suco Natural</span> - <span data-i18n="drink1Price">€ 10,00</span>
+                </button>
+            </div>
+            <div class="menu-item" data-image="https://images.pexels.com/photos/50593/coca-cola-cold-drink-soft-drink-coke-50593.jpeg?auto=compress&cs=tinysrgb&w=400" data-description="drink2Description">
+                <button class="item-button">
+                    <span data-i18n="drink2">Refrigerante</span> - <span data-i18n="drink2Price">€ 8,00</span>
+                </button>
+            </div>
+            <div class="menu-item" data-image="https://images.pexels.com/photos/1267700/pexels-photo-1267700.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load" data-description="drink3Description">
+                <button class="item-button">
+                    <span data-i18n="drink3">Cerveja Artesanal</span> - <span data-i18n="drink3Price">€ 15,00</span>
+                </button>
             </div>
         </div>
 
         <!-- Sobremesas -->
-        <div class="tab-pane fade" id="sobremesas" role="tabpanel">
-            <div class="menu-items">
-                <section>
-                    
-                    <div class="menu-items">
-                        <div class="menu-item">
-                            <div class="row justify-content-between align-items-center">
-                                <div class="col">
-                                    <h3>Pudim de Leite</h3>
-                                    <p class="description">Pudim caseiro com calda de caramelo</p>
-                                </div>
-                                <div class="col-auto">
-                                    <span class="price">R$ 22,90</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="menu-item">
-                            <div class="row justify-content-between align-items-center">
-                                <div class="col">
-                                    <h3>Petit Gateau</h3>
-                                    <p class="description">Bolo quente de chocolate com sorvete de baunilha</p>
-                                </div>
-                                <div class="col-auto">
-                                    <span class="price">R$ 28,90</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="menu-item">
-                            <div class="row justify-content-between align-items-center">
-                                <div class="col">
-                                    <h3>Cheesecake</h3>
-                                    <p class="description">Com calda de frutas vermelhas</p>
-                                </div>
-                                <div class="col-auto">
-                                    <span class="price">R$ 26,90</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="menu-item">
-                            <div class="row justify-content-between align-items-center">
-                                <div class="col">
-                                    <h3>Tiramisù</h3>
-                                    <p class="description">Clássica sobremesa italiana com café e mascarpone</p>
-                                </div>
-                                <div class="col-auto">
-                                    <span class="price">R$ 24,90</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+        <div class="menu-category" id="desserts" style="display: none;">
+            <div class="menu-item" data-image="https://images.pexels.com/photos/25916369/pexels-photo-25916369/free-photo-of-acucar-sobremesa-doce-bala.jpeg?auto=compress&cs=tinysrgb&w=400" data-description="dessert1Description">
+                <button class="item-button">
+                    <span data-i18n="dessert1">Pudim de Leite</span> - <span data-i18n="dessert1Price">€ 12,00</span>
+                </button>
+            </div>
+            <div class="menu-item" data-image="https://images.pexels.com/photos/4109998/pexels-photo-4109998.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load" data-description="dessert2Description">
+                <button class="item-button">
+                    <span data-i18n="dessert2">Mousse de Chocolate</span> - <span data-i18n="dessert2Price">€ 14,00</span>
+                </button>
+            </div>
+            <div class="menu-item" data-image="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load" data-description="dessert3Description">
+                <button class="item-button">
+                    <span data-i18n="dessert3">Cheesecake</span> - <span data-i18n="dessert3Price">€ 16,00</span>
+                </button>
             </div>
         </div>
-    </div>
-</div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <!-- Área de exibição da imagem e descrição -->
+        <div class="image-display">
+            <img id="displayed-image" src="https://images.pexels.com/photos/842142/pexels-photo-842142.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Imagem do Item">
+            <p id="item-description" data-i18n="main1Description">Peixe grelhado com ervas finas e acompanhamentos.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
