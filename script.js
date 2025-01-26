@@ -35,7 +35,11 @@ const translations = {
         dessert2Description: "Mousse de chocolate cremoso e leve.",
         dessert3: "Cheesecake",
         dessert3Price: "€ 16,00",
-        dessert3Description: "Cheesecake com base de biscoito e frutas vermelhas."
+        dessert3Description: "Cheesecake com base de biscoito e frutas vermelhas.",
+        // Adicione as traduções para os botões do menu
+        menuMain: "Pratos Principais",
+        menuDrinks: "Bebidas",
+        menuDesserts: "Sobremesas"
     },
     en: {
         restaurantTitle: "Restaurant",
@@ -72,7 +76,11 @@ const translations = {
         dessert2Description: "Creamy and light chocolate mousse.",
         dessert3: "Cheesecake",
         dessert3Price: "€ 16.00",
-        dessert3Description: "Cheesecake with a biscuit base and red berries."
+        dessert3Description: "Cheesecake with a biscuit base and red berries.",
+        // Adicione as traduções para os botões do menu
+        menuMain: "Main Dishes",
+        menuDrinks: "Drinks",
+        menuDesserts: "Desserts"
     }
 };
 

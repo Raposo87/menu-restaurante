@@ -127,7 +127,7 @@ h1 {
 
 /* Estilo para a mensagem de orientação */
 .orientation-message {
-    display: none; /* Inicialmente oculto */
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -138,33 +138,20 @@ h1 {
     padding: 20px;
 }
 
-/* Estilo para o ícone de telefone */
 .rotate-icon {
-    font-size: 60px;
+    font-size: 100px;
+    color: #007BFF;
     margin-bottom: 20px;
-    animation: rotate 2s infinite ease-in-out; /* Animação de rotação */
+    animation: rotate-phone 2s infinite;
 }
 
-/* Animação de rotação */
-@keyframes rotate {
-    0% {
-        transform: rotate(0deg);
-    }
-    50% {
-        transform: rotate(90deg);
-    }
-    100% {
-        transform: rotate(0deg);
-    }
+@keyframes rotate-phone {
+    0%, 100% { transform: rotate(0deg) translateX(0); }
+    25% { transform: rotate(-90deg) translateX(-20px); }
+    75% { transform: rotate(90deg) translateX(20px); }
 }
 
-/* Exibe a mensagem no modo retrato */
-@media screen and (orientation: portrait) {
-    body {
-        display: none; /* Oculta o conteúdo principal */
-    }
-
-    .orientation-message {
-        display: flex; /* Exibe a mensagem */
-    }
+.orientation-message p {
+    color: #333;
+    font-weight: bold;
 }
