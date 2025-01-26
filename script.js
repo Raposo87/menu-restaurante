@@ -172,7 +172,7 @@ function checkOrientation() {
         
         // Start alternating messages
         updateOrientationMessage();
-        this.orientationMessageInterval = setInterval(updateOrientationMessage, 4000);
+        this.orientationMessageInterval = setInterval(updateOrientationMessage, 3000);
     } else {
         orientationMessage.style.display = 'none';
         document.body.style.overflow = 'auto';
