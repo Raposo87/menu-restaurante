@@ -21,6 +21,15 @@ const translations = {
         drink1: "Suco Natural",
         drink1Price: "€ 10,00",
         drink1Description: "Suco natural feito na hora.",
+        suco1: "Suco de Laranja",
+        suco1Price: "€ 10,00",
+        suco1Description: "Suco natural de laranja espremido na hora.",
+        suco2: "Suco de Abacaxi",
+        suco2Price: "€ 10,00",
+        suco2Description: "Suco natural de abacaxi com hortelã.",
+        suco3: "Suco de Morango",
+        suco3Price: "€ 10,00",
+        suco3Description: "Suco natural de morango com limão.",
         drink2: "Refrigerante",
         drink2Price: "€ 8,00",
         drink2Description: "Refrigerante gelado de diversos sabores.",
@@ -36,7 +45,7 @@ const translations = {
         dessert3: "Cheesecake",
         dessert3Price: "€ 16,00",
         dessert3Description: "Cheesecake com base de biscoito e frutas vermelhas.",
-        // Adicione as traduções para os botões do menu
+        //traduções para os botões do menu
         menuMain: "Pratos Principais",
         menuDrinks: "Bebidas",
         menuDesserts: "Sobremesas"
@@ -62,6 +71,15 @@ const translations = {
         drink1: "Natural Juice",
         drink1Price: "€ 10.00",
         drink1Description: "Freshly made natural juice.",
+        suco1: "Orange Juice",
+        suco1Price: "€ 10.00",
+        suco1Description: "Freshly squeezed orange juice.",
+        suco2: "Pineapple Juice",
+        suco2Price: "€ 10.00",
+        suco2Description: "Natural pineapple juice with mint.",
+        suco3: "Strawberry Juice",
+        suco3Price: "€ 10.00",
+        suco3Description: "Natural strawberry juice with lemon.",
         drink2: "Soda",
         drink2Price: "€ 8.00",
         drink2Description: "Iced soda in various flavors.",
@@ -77,7 +95,7 @@ const translations = {
         dessert3: "Cheesecake",
         dessert3Price: "€ 16.00",
         dessert3Description: "Cheesecake with a biscuit base and red berries.",
-        // Adicione as traduções para os botões do menu
+        // traduções para os botões do menu
         menuMain: "Main Dishes",
         menuDrinks: "Drinks",
         menuDesserts: "Desserts"
@@ -185,3 +203,21 @@ function checkOrientation() {
 window.addEventListener('load', checkOrientation);
 window.addEventListener('resize', checkOrientation);
 window.addEventListener('orientationchange', checkOrientation);
+
+// Adicionar evento para o item "Suco Natural"
+document.getElementById("suco-natural").addEventListener("click", function (event) {
+    event.stopPropagation(); // Impede que o evento se propague para o item pai
+    const submenu = this.parentElement.querySelector(".submenu");
+    if (submenu) {
+        submenu.style.display = submenu.style.display === "none" ? "block" : "none";
+    }
+});
+
+// Atualizar a função updateImageAndDescription para lidar com submenus
+function updateImageAndDescription(item) {
+    const imageSrc = item.getAttribute("data-image");
+    const descriptionKey = item.getAttribute("data-description");
+    document.getElementById("displayed-image").src = imageSrc;
+    document.getElementById("item-description").setAttribute("data-i18n", descriptionKey);
+    document.getElementById("item-description").textContent = translations[currentLang][descriptionKey];
+}
