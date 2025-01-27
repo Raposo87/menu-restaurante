@@ -101,7 +101,6 @@ function updateImageAndDescription(item) {
     const descriptionKey = item.getAttribute("data-description");
     document.getElementById("displayed-image").src = imageSrc;
     document.getElementById("item-description").setAttribute("data-i18n", descriptionKey);
-    updateLanguage(currentLang);
 }
 
 // Função para atualizar a imagem e a descrição com base no primeiro item do menu ativo
